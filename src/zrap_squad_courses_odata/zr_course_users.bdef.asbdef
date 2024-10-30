@@ -1,0 +1,52 @@
+managed implementation in class ZBP_R_COURSE_USERS unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_COURSE_USERS alias ZrCourseUsers
+persistent table ZCOURSE_USERS
+draft table ZCOURSE_USERS_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   EmployeeNumber,
+   Assignment;
+
+  field ( readonly )
+   IdCourse,
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( numbering : managed )
+   IdCourse;
+
+  field ( readonly : update )
+   EmployeeNumber,
+   Assignment;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCOURSE_USERS
+  {
+    EmployeeNumber = employee_number;
+    Assignment = assignment;
+    IdCourse = id_course;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

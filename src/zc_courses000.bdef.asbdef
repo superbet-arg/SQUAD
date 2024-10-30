@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_COURSES000 //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _CourseUsers;
+}
+
+define behavior for ZC_COURSE_USERS //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Courses;
+}

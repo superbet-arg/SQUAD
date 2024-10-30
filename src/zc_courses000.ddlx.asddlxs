@@ -1,0 +1,272 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Courses'
+@UI.headerInfo.typeNamePlural: 'Courses'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'IdCourse'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'IdCourse'
+annotate view ZC_COURSES000 with
+{
+  @EndUserText.label: 'Course ID'
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  },
+  {
+    label: 'Items',
+    id: 'Items',
+    purpose: #STANDARD,
+    position: 11 ,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '_CourseUsers'
+  } ]
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'Course ID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+     label: 'Course ID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  IdCourse;
+
+  @EndUserText.label: 'Topic'
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'Topic'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 ,
+    label: 'Topic'
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  IdTechnology;
+
+  @EndUserText.label: 'Description'
+  @UI.identification: [ {
+    position: 30 ,
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 ,
+    label: 'Description'
+  } ]
+  //  @UI.selectionField: [ {
+  //    position: 30
+  //  } ]
+  Description;
+
+  @EndUserText.label: 'Level'
+  @UI.identification: [ {
+    position: 70 ,
+    label: 'Level'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+    label: 'Level'
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  IdDifficulty;
+
+  @EndUserText.label: 'Type'
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 ,
+    label: 'Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  IdTypeInsc;
+
+  @EndUserText.label: 'Course Name'
+  @UI.identification: [ {
+    position: 180 ,
+    label: 'Course Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 ,
+    label: 'Course Name'
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  CourseName;
+
+  //  @EndUserText.label: 'IdCourseCategory'
+  @UI.identification: [ {
+    position: 40 ,
+    label: 'IdCourseCategory'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 40 ,
+  //    label: 'IdCourseCategory'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 40
+  //  } ]
+  IdCourseCategory;
+
+  //  @EndUserText.label: 'StartDate'
+  @UI.identification: [ {
+    position: 50 ,
+    label: 'StartDate'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 50 ,
+  //    label: 'StartDate'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 50
+  //  } ]
+  StartDate;
+
+  //  @EndUserText.label: 'EndDate'
+  @UI.identification: [ {
+    position: 60 ,
+    label: 'EndDate'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 60 ,
+  //    label: 'EndDate'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 60
+  //  } ]
+  EndDate;
+
+
+  //  @EndUserText.label: 'ComponentToBeChanged'
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'ComponentToBeChanged'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 80 ,
+  //    label: 'ComponentToBeChanged'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 80
+  //  } ]
+  ComponentToBeChanged;
+
+  //  @EndUserText.label: 'Requeriments'
+  @UI.identification: [ {
+    position: 90 ,
+    label: 'Requeriments'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 90 ,
+  //    label: 'Requeriments'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 90
+  //  } ]
+  Requeriments;
+
+  //  @EndUserText.label: 'IdTracking'
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'IdTracking'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 110 ,
+  //    label: 'IdTracking'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 110
+  //  } ]
+  IdTracking;
+
+  //  @EndUserText.label: 'IdState'
+  @UI.identification: [ {
+    position: 120 ,
+    label: 'IdState'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 120 ,
+  //    label: 'IdState'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 120
+  //  } ]
+  IdState;
+
+  @UI.identification: [ {
+    position: 130 ,
+    label: 'Createdby'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 130 ,
+  //    label: 'Createdby'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 130
+  //  } ]
+  Createdby;
+
+  @UI.identification: [ {
+    position: 140 ,
+    label: 'Createdat'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 140 ,
+  //    label: 'Createdat'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 140
+  //  } ]
+  Createdat;
+
+  @UI.identification: [ {
+    position: 150 ,
+    label: 'Lastchangedby'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 150 ,
+  //    label: 'Lastchangedby'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 150
+  //  } ]
+  Lastchangedby;
+
+  @UI.identification: [ {
+    position: 160 ,
+    label: 'Lastchangedat'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 160 ,
+  //    label: 'Lastchangedat'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 160
+  //  } ]
+  Lastchangedat;
+
+  @UI.identification: [ {
+    position: 170 ,
+    label: 'Locallastchanged'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 170 ,
+  //    label: 'Locallastchanged'
+  //  } ]
+  //  @UI.selectionField: [ {
+  //    position: 170
+  //  } ]
+  Locallastchanged;
+}

@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_TECHNOLOGIES_CR unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TECHNOLOGIES_CR alias ZrTechnologiesCr
+persistent table ZTECHNOLOGIES_CR
+draft table ZTECHNOLOGIES_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   IdTechnology;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   IdTechnology;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTECHNOLOGIES_CR
+  {
+    IdTechnology = id_technology;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

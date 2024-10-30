@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_ASSIGNMENT_CR'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_ASSIGNMENT_CR'
+  }
+}
+define service ZUI_ASSIGNMENT_CR_O4 provider contracts odata_v4_ui {
+  expose ZC_ASSIGNMENT_CR;
+}

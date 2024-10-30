@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_TYPESINSC_CR unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TYPESINSC_CR alias ZrTypesinscCr
+persistent table ZTYPESINSC_CR
+draft table ZTYPESINSC000_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   IdTypeInsc;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   IdTypeInsc;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZTYPESINSC_CR
+  {
+    IdTypeInsc = id_type_insc;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

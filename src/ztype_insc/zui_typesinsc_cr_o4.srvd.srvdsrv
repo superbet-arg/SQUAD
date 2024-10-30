@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TYPESINSC_CR'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TYPESINSC_CR'
+  }
+}
+define service ZUI_TYPESINSC_CR_O4 provider contracts odata_v4_ui {
+  expose ZC_TYPESINSC_CR;
+}

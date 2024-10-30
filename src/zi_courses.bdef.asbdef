@@ -1,0 +1,150 @@
+managed implementation in class zbp_i_courses unique;
+strict ( 2 );
+
+define behavior for ZI_COURSES alias _Courses
+persistent table zcourses
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( readonly )
+  IdCourse,
+  Createdby,
+  Lastchangedby,
+  Lastchangedat,
+  Locallastchanged;
+
+  field ( numbering : managed )
+  IdCourse;
+
+  create;
+  update;
+  delete;
+
+  //  draft action Activate optimized;
+  //  draft action Discard;
+  //  draft action Edit;
+  //  draft action Resume;
+  //  draft determine action Prepare;
+
+  mapping for zcourses
+    {
+      IdCourse             = id_course;
+      CourseName           = course_name;
+      IdTechnology         = id_technology;
+      Description          = description;
+      IdCourseCategory     = id_course_category;
+      StartDate            = start_date;
+      EndDate              = end_date;
+      IdDifficulty         = id_difficulty;
+      ComponentToBeChanged = component_to_be_changed;
+      Requeriments         = requeriments;
+      IdTypeInsc           = id_type_insc;
+      IdTracking           = id_tracking;
+      IdState              = id_state;
+      Createdby            = createdby;
+      Createdat            = createdat;
+      Lastchangedby        = lastchangedby;
+      Lastchangedat        = lastchangedat;
+      Locallastchanged     = locallastchanged;
+    }
+  association _CourseUsers;
+}
+//
+//define behavior for ZR_USERS alias _Users
+//persistent table zusers
+////draft table zusers_d
+////etag master LastChangedAt
+//lock master
+//authorization master ( instance )
+//
+//{
+//  field ( mandatory : create )
+//  EmployeeNumber;
+//
+//  field ( readonly )
+//  LocalCreatedBy,
+//  LocalLastChangedBy,
+//  LocalLastChangedAt,
+//  LastChangedAt;
+//
+//  field ( readonly : update )
+//  EmployeeNumber;
+//
+//
+//  create;
+//  update;
+//  delete;
+//
+//  draft action Activate optimized;
+//  draft action Discard;
+//  draft action Edit;
+//  draft action Resume;
+//  draft determine action Prepare;
+//
+//  mapping for zusers
+//    {
+//      EmployeeNumber     = employee_number;
+//      Name               = name;
+//      Surname            = surname;
+//      Mail               = mail;
+//      LocalCreatedBy     = local_created_by;
+//      LocalCreatedAt     = local_created_at;
+//      LocalLastChangedBy = local_last_changed_by;
+//      LocalLastChangedAt = local_last_changed_at;
+//      LastChangedAt      = last_changed_at;
+//    }
+//    association _CourseUsers;
+//}
+//
+
+
+define behavior for ZI_COURSE_USERS alias _CourseUsers
+persistent table zcourse_users
+lock dependent by _Courses
+authorization dependent by _Courses
+//etag master <field_name>
+{
+
+  //  field ( mandatory : create ) // No tenemos el tag "Create" habilitado.
+  //  EmployeeNumber,
+  //  Assignment;
+
+  field ( readonly )
+  IdCourse,
+  Createdby,
+  Lastchangedby,
+  Lastchangedat,
+  Locallastchanged;
+
+  field ( readonly : update )
+  EmployeeNumber,
+  Assignment;
+
+
+  //  create;
+  update;
+  delete;
+
+  //  draft action Activate optimized;
+  //  draft action Discard;
+  //  draft action Edit;
+  //  draft action Resume;
+  //  draft determine action Prepare;
+
+  mapping for zcourse_users
+    {
+      EmployeeNumber   = employee_number;
+      Assignment       = assignment;
+      IdCourse         = id_course;
+      Createdby        = createdby;
+      Createdat        = createdat;
+      Lastchangedby    = lastchangedby;
+      Lastchangedat    = lastchangedat;
+      Locallastchanged = locallastchanged;
+    }
+
+  //  field ( readonly ) EmployeeNumber, IdCourse, Assignment;
+  association _Courses;
+
+}

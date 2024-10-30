@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TECHNOLOGIES_CR'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TECHNOLOGIES_CR'
+  }
+}
+define service ZUI_TECHNOLOGIES_CR_O4 provider contracts odata_v4_ui {
+  expose ZC_TECHNOLOGIES_CR;
+}
